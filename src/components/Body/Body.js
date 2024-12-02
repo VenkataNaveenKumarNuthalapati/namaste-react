@@ -8,6 +8,7 @@ const Body = () => {
     const [allRestCards, setAllRestCards] = useState([]); // Original list
     const [userInput, setUserInput] = useState("");
     const [isTopRatedActive, setIsTopRatedActive] = useState(false);
+    const [title, setTitle] = useState("");
 
     useEffect(() => {
         fetchRestaurants();
@@ -22,6 +23,7 @@ const Body = () => {
             const restaurants =
                 data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
                     ?.restaurants || [];
+            setTitle(data?.data?.cards[1]?.card?.card?.header?.title);
             setAllRestCards(restaurants); // Store original list
             setRestCards(restaurants); // Initialize filtered list
         } catch (error) {
@@ -55,10 +57,7 @@ const Body = () => {
 
     return (
         <div className="body-container">
-            <h1 className="heading">
-                Restaurants with online food delivery in Ongole
-            </h1>
-
+            <h1 className="heading">{title}</h1>
             <div className="filter-container">
                 <button
                     className={
@@ -79,7 +78,6 @@ const Body = () => {
                     onChange={(e) => setUserInput(e.target.value)}
                 />
             </div>
-
             {restCards.length === 0 ? (
                 <ShimmerUI numberList={Array.from({ length: 12 })} />
             ) : (
