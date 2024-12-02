@@ -1,0 +1,46 @@
+.rest-card-image {
+    width: 95%;
+    height: 120px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.card-container {
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+    width: 15.9%;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+.card-container:hover {
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.restName {
+    color: black;
+    font-weight: 500;
+}
+.location {
+    color: gray;
+    font-size: 12px;
+}
+.rating {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+.star-image {
+    height: 25px;
+    width: 25px;
+}
+
+.castfor2 {
+    color: red;
+}
+.cuisines {
+    color: green;
+    margin-top: 5px;
+}
