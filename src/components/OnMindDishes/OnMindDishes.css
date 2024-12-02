@@ -1,0 +1,4 @@
+.dish-card-container {
+    display: flex;
+    overflow-x: scroll;
+}
