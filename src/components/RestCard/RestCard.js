@@ -1,8 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./RestCard.css";
 
 const RestCard = ({ restObj }) => {
     const {
+        id,
         name,
         cloudinaryImageId,
         locality,
@@ -12,7 +15,7 @@ const RestCard = ({ restObj }) => {
         avgRating,
     } = restObj.info;
     return (
-        <div className="card-container">
+        <Link to={"/restaurant/" + id} className="card-container">
             <img
                 className="rest-card-image"
                 src={
@@ -36,7 +39,7 @@ const RestCard = ({ restObj }) => {
                 <span className="location">{areaName}</span>
             </div>
             <p className="cuisines">{cuisines.join(", ")}</p>
-        </div>
+        </Link>
     );
 };
 

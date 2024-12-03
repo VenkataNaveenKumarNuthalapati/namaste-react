@@ -1,6 +1,6 @@
 import React from "react";
 
-import { onMindApi } from "../Body/utils";
+import { onMindApi } from "../../../utils/utils";
 import "./DishCard.css";
 const DishCard = ({ dish }) => {
     console.log(dish);

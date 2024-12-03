@@ -4,7 +4,6 @@ import RestCard from "../RestCard/RestCard";
 import "./RestCards.css";
 
 const RestCards = ({ restList }) => {
-    console.log(restList);
     return (
         <ul className="cards-container">
             {restList.map((restObj) => (

@@ -1,0 +1,80 @@
+.rest-bg-container {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.rest-name {
+    color: #ee872f;
+}
+.rest-image {
+    height: 200px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.rest-card {
+    padding: 10px;
+    gap: 5px;
+    background-color: #f0f0f0;
+    width: 30%;
+    background-image: linear-gradient(to bottom right, gray, white, gray);
+    box-shadow: 2px 2px 5px 0px gray;
+    /* height: 70vh; */
+}
+
+.text-container {
+    margin-top: 10px;
+}
+
+.area {
+    color: gray;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.rating {
+    color: green;
+}
+
+.avg-rating {
+    color: red;
+    margin-top: 10px;
+}
+.top-rating {
+    color: black;
+    margin-top: 10px;
+}
+.cuesins {
+    color: black;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.rec-cards-container {
+    height: 80vh;
+    overflow-y: scroll;
+    width: 70%;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    display: flex;
+}
+.rec-image {
+    height: 100px;
+    width: 100%;
+}
+
+.rec-heading {
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    color: #ee872f;
+    text-align: center;
+    font-weight: bold;
+}
+
+.rec-card {
+    background-color: #f0f0f0;
+    box-shadow: 2px 2px 5px 0px gray;
+    margin: 10px;
+    width: 200px;
+}

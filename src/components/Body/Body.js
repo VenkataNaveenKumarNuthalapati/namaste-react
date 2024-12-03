@@ -3,7 +3,7 @@ import RestCards from "../RestCards/RestCards";
 import ShimmerUI from "../ShimmerUI/ShimmerUI";
 import OnMindDishes from "../OnMindDishes/OnMindDishes";
 import SearchBar from "../SearchBar/SearchBar";
-import { apiUrl } from "./utils";
+import { apiUrl } from "../../../utils/utils";
 import "./Body.css";
 
 const Body = () => {

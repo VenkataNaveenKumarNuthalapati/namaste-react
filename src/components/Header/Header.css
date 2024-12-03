@@ -45,3 +45,13 @@
     border: none;
     padding: 5px 15px;
 }
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a.active {
+    color: #ee872f;
+    font-weight: 400;
+}

@@ -3,3 +3,9 @@ export const apiUrl =
 
 export const onMindApi =
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/";
+
+export const restDetailsAPI =
+    "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=15.5057232&lng=80.049922&restaurantId=";
+
+export const BASE_IMAGE_URL =
+    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/";

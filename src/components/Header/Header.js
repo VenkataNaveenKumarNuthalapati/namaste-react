@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-
 import "./Header.css";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
     const [isLogin, setIsLogin] = useState(false);
@@ -14,10 +14,18 @@ const Header = () => {
                 />
             </div>
             <ul className="features-container">
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact Us</li>
-                <li>Cart</li>
+                <li>
+                    <NavLink to="/">Home</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/about">About</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/contact">Contact Us</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/cart">Cart</NavLink>
+                </li>
                 <button
                     className="login-button"
                     onClick={() => {
