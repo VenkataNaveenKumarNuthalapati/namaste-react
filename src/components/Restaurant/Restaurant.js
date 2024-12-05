@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import ShimmerUI from "../ShimmerUI/ShimmerUI";
-import { useRestApiData } from "../../../utils/useRestApiData";
+import { useRestApiData } from "../../utils/useRestApiData";
 import RestInfoCard from "../RestInfoCard/RestInfoCard";
 import FoodInfoCard from "../FoodInfoCard/FoodInfoCard";
 import "./Restaurant.css";
@@ -34,7 +34,7 @@ const Restaurant = () => {
                             <div
                                 onClick={() => onCategoryClickHandle(index)}
                                 key={index + each?.card?.card?.title}
-                                className="bg-gray-100 shadow-orange-400 shadow-sm w-full mt-2 p-2 flex align-middle justify-between cursor-pointer"
+                                className="bg-gray-100 shadow-[#d7202e] shadow-sm w-full mt-2 p-2 flex align-middle justify-between cursor-pointer"
                             >
                                 <span className="rec-heading text-lg">
                                     {each?.card?.card?.title}

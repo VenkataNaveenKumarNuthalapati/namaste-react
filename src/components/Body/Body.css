@@ -3,7 +3,7 @@
 }
 
 .heading {
-    color: #ee872f;
+    color: #d6535e;
     font-weight: 300;
     margin-top: 10px;
 }
@@ -34,5 +34,7 @@
 }
 
 .search-input {
-    padding: 7px;
+    padding: 10px;
+    border-width: 2px black;
+    outline: none;
 }

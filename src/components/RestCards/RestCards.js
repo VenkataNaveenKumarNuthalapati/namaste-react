@@ -1,6 +1,6 @@
 import React from "react";
 import RestCard from "../RestCard/RestCard";
-import higherOrderComp from "../../../utils/HigherOrderComp";
+import higherOrderComp from "../../utils/HigherOrderComp";
 
 import "./RestCards.css";
 

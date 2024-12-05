@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./Header.css";
 import { NavLink } from "react-router-dom";
-import globalContext from "../../../utils/useGlobalContext";
-
+import globalContext from "../../utils/useGlobalContext";
+import logo3 from "../../../public/images/logo3.png";
+import "./Header.css";
 const Header = () => {
     const [isLogin, setIsLogin] = useState(false);
 
@@ -10,12 +10,9 @@ const Header = () => {
 
     return (
         <div className="header-container z-20">
-            <div className="logo-container">
-                <img
-                    className="logo-image"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs91y4Dvl3NJ-aViGAKPP1uVMh3WIlRZppVw&s"
-                    alt=""
-                />
+            <div className="logo-container flex items-end border-black border-l-[#d7202e] border-b-2 border-l-8 p-2">
+                <img className="logo-image" src={logo3} alt="" />
+                <p className="text-[#d7202e] text-2xl ">Foodie Haven</p>
             </div>
 
             <ul className="features-container">

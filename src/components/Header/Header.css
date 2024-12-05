@@ -8,8 +8,8 @@
     align-items: center;
     border: 0 1 solid;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    border-bottom: 3px solid #ee872f;
-    border-left: 10px solid #ee872f;
+    /* border-bottom: 3px solid black;
+    border-left: 10px solid #d7202e; */
     border-top-left-radius: 3px;
     margin: 0;
     padding: 10px;
@@ -39,7 +39,7 @@
 }
 
 .login-button {
-    background-color: #ee872f;
+    background-color: #d7202e;
     color: #ffffff;
     outline: none;
     border: none;

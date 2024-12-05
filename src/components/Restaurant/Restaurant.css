@@ -17,8 +17,14 @@
     gap: 5px;
     background-color: #f0f0f0;
     width: 30%;
-    background-image: linear-gradient(to bottom right, gray, white, gray);
-    box-shadow: 2px 2px 5px 0px gray;
+    background-image: linear-gradient(
+        to bottom,
+        #f9828c,
+        white,
+        white,
+        #f9828c
+    );
+    box-shadow: 2px 2px 5px 0px #d7202e;
     /* height: 70vh; */
 }
 

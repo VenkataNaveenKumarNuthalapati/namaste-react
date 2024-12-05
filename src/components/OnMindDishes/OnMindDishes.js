@@ -3,8 +3,6 @@ import DishCard from "../DishCard/DishCard";
 import "./OnMindDishes.css";
 
 const OnMindDishes = ({ onMindDishList }) => {
-    console.log(onMindDishList);
-
     return (
         <div className="dish-card-container">
             {onMindDishList.map((eachDish) => (

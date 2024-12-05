@@ -1,1 +1,1 @@
-# Namaste React ![alt text](image.png)
+# Namaste React ![alt text](./public/images/logo3.png)

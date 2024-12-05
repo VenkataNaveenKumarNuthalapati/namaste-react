@@ -19,7 +19,7 @@ const SearchBar = ({
             </button>
             <input
                 type="search"
-                className="search-input border"
+                className="search-input border-2"
                 value={userInput}
                 placeholder="Search restaurants..."
                 onChange={(e) => onSearchChange(e.target.value)}

@@ -1,5 +1,5 @@
 import React from "react";
-import { BASE_IMAGE_URL } from "../../../utils/utils";
+import { BASE_IMAGE_URL } from "../../utils/utils";
 
 const FoodInfoCard = ({ info }) => {
     const { imageId, name, description, price, defaultPrice, ratings } = info;
@@ -7,7 +7,7 @@ const FoodInfoCard = ({ info }) => {
     return (
         <div className="bg-white flex justify-between m-2 shadow-lg p-2 rounded-lg my-2 px-2">
             <div className="w-10/12">
-                <p className="text-2xl text-orange-600">{name}</p>
+                <p className="text-2xl text-[#d6535e]">{name}</p>
 
                 <p
                     className={
