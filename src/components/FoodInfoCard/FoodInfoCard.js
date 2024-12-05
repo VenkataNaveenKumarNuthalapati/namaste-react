@@ -24,14 +24,17 @@ const FoodInfoCard = ({ info }) => {
                     />
                     {ratings.aggregatedRating.rating || "0.0"}
                 </p>
-                <p className="text-red-700 font-bold">
-                    ₹ {price / 100 || defaultPrice / 100} /-
+                <p className="font-bold">
+                    ₹ {Math.round(price / 100) || defaultPrice / 100} /-
                 </p>
-                <p className="text-sm text-gray-500">{description}</p>
+                <p className="text-sm text-gray-500">
+                    {description ||
+                        "Freshly prepared with premium ingredients, delivering irresistible flavor in every bite."}
+                </p>
             </div>
 
             <div className="w-2/12 relative h-full flex-col my-auto">
-                <button className="cursor-pointer absolute bottom-2 right-2  bg-black text-white rounded-md px-2 z-10">
+                <button className="p-1 px-4 cursor-pointer absolute bottom-2 right-2  bg-black text-white rounded-md px-2 z-10">
                     Add <sup>+</sup>
                 </button>
                 <img

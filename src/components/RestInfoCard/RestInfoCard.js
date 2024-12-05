@@ -15,12 +15,12 @@ const RestInfoCard = ({ restaurantData }) => {
     } = restaurantData;
     return (
         <div className="rest-card">
-            <h1 className="rest-name">{name}</h1>
             <img
                 className="rest-image"
                 src={`${BASE_IMAGE_URL}w_660/${cloudinaryImageId}`}
                 alt={name}
             />
+            <h1 className="font-bold text-[26px] text-center my-2">{name}</h1>
             <div className="text-container">
                 <h3 className="area">
                     {areaName}, {locality}

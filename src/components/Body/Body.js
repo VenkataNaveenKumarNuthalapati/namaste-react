@@ -4,6 +4,7 @@ import ShimmerUI from "../ShimmerUI/ShimmerUI";
 import OnMindDishes from "../OnMindDishes/OnMindDishes";
 import SearchBar from "../SearchBar/SearchBar";
 import { apiUrl } from "../../../utils/utils";
+import globalContext from "../../../utils/useGlobalContext";
 import "./Body.css";
 
 const Body = () => {
@@ -14,6 +15,7 @@ const Body = () => {
     const [titleOnMind, setTitleOnMind] = useState("");
     const [titleChainRest, setTitleChainRest] = useState("");
     const [onMindList, setOnMindList] = useState([]);
+    const { isOnline } = globalContext();
 
     useEffect(() => {
         fetchRestaurants();
@@ -67,7 +69,14 @@ const Body = () => {
     };
 
     return (
-        <div className="body-container">
+        <div className="relative body-container">
+            {!isOnline && (
+                <div className="absolute inset-0 bg-black bg-opacity-70 z-20 pointer-events-none">
+                    <center className="text-2xl text-gray-200 mt-10">
+                        Your are Offline, Please Check your Internet Connection
+                    </center>
+                </div>
+            )}
             <h1 className="heading text-3xl">{titleOnMind}</h1>
             <OnMindDishes onMindDishList={onMindList} />
             <h1 className="heading text-3xl">{titleChainRest}</h1>

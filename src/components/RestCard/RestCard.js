@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "./RestCard.css";
 
-const RestCard = ({ restObj }) => {
+const RestCard = ({ restObj, class_name }) => {
     const {
         id,
         name,
@@ -13,9 +13,21 @@ const RestCard = ({ restObj }) => {
         costForTwo,
         cuisines,
         avgRating,
-    } = restObj.info;
+    } = restObj?.info;
+
+    const navigate = useNavigate();
+
     return (
-        <Link to={"/restaurant/" + id} className="card-container">
+        <div
+            className={`${
+                restObj?.info?.isOpen ? "cursor-pointer" : "cursor-not-allowed"
+            } card-container h-full ${class_name}`}
+            onClick={
+                restObj?.info?.isOpen
+                    ? () => navigate("/restaurant/" + id)
+                    : undefined
+            }
+        >
             <img
                 className="rest-card-image"
                 src={
@@ -39,7 +51,7 @@ const RestCard = ({ restObj }) => {
                 <span className="location">{areaName}</span>
             </div>
             <p className="cuisines">{cuisines.join(", ")}</p>
-        </Link>
+        </div>
     );
 };
 
