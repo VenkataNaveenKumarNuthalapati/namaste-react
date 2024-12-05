@@ -27,6 +27,11 @@ const RestInfoCard = ({ restaurantData }) => {
                 </h3>
                 <p className="rating">{costForTwoMessage}</p>
                 <p className="avg-rating">
+                    <img
+                        src="https://png.pngtree.com/png-vector/20230912/ourmid/pngtree-green-star-png-png-image_10023584.png"
+                        alt="image"
+                        className="star-image inline pb-1"
+                    />
                     Avg ratings: {avgRating}{" "}
                     <span className="top-rating">({totalRatingsString})</span>
                 </p>

@@ -4,6 +4,11 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
     const [isLogin, setIsLogin] = useState(false);
+    const [isOnline, setIsOnline] = useState(true);
+
+    window.addEventListener("online", () => setIsOnline(true));
+    window.addEventListener("offline", () => setIsOnline(false));
+
     return (
         <div className="header-container">
             <div className="logo-container">
@@ -14,6 +19,9 @@ const Header = () => {
                 />
             </div>
             <ul className="features-container">
+                <li className={isOnline ? "text-green-400" : "text-red-400"}>
+                    {isOnline ? "Online: 🟢" : "Offline: 🔴"}
+                </li>
                 <li>
                     <NavLink to="/">Home</NavLink>
                 </li>

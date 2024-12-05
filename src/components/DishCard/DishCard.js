@@ -4,11 +4,7 @@ import { onMindApi } from "../../../utils/utils";
 import "./DishCard.css";
 const DishCard = ({ dish }) => {
     console.log(dish);
-    return (
-        <a href={dish.action.link}>
-            <img src={onMindApi + dish.imageId} className="dish-image" />
-        </a>
-    );
+    return <img src={onMindApi + dish.imageId} className="w-28" />;
 };
 
 export default DishCard;

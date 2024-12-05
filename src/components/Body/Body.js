@@ -68,9 +68,9 @@ const Body = () => {
 
     return (
         <div className="body-container">
-            <h1 className="heading">{titleOnMind}</h1>
+            <h1 className="heading text-3xl">{titleOnMind}</h1>
             <OnMindDishes onMindDishList={onMindList} />
-            <h1 className="heading">{titleChainRest}</h1>
+            <h1 className="heading text-3xl">{titleChainRest}</h1>
             <SearchBar
                 userInput={userInput}
                 onSearchChange={setUserInput}

@@ -4,37 +4,63 @@ import { useRestApiData } from "../../../utils/useRestApiData";
 import RestInfoCard from "../RestInfoCard/RestInfoCard";
 import FoodInfoCard from "../FoodInfoCard/FoodInfoCard";
 import "./Restaurant.css";
+import { useState } from "react";
 
 const Restaurant = () => {
     const { resId } = useParams();
     const [restaurantData, dataLists] = useRestApiData(resId);
-    const keysList = Object.keys(dataLists);
+    const [categoryShowId, setCategoryShowId] = useState(null);
 
     if (!restaurantData) {
         return <ShimmerUI numberList={[...Array(18)]} />;
     }
+
+    const onCategoryClickHandle = (index) => {
+        if (categoryShowId === index) {
+            setCategoryShowId(null);
+        } else {
+            setCategoryShowId(index);
+        }
+    };
 
     return (
         <div className="rest-bg-container">
             <RestInfoCard restaurantData={restaurantData} />
 
             <ul className="rec-cards-container">
-                {keysList.map((eachKey) => (
-                    <>
-                        {dataLists[eachKey].length !== 0 && (
-                            <h1 key={eachKey} className="rec-heading">
-                                {eachKey}
-                            </h1>
-                        )}
+                {dataLists.map((each, index) => {
+                    return (
+                        <>
+                            <div
+                                onClick={() => onCategoryClickHandle(index)}
+                                key={index + each?.card?.card?.title}
+                                className="bg-gray-100 w-full mt-2 p-2 flex align-middle justify-between cursor-pointer"
+                            >
+                                <span className="rec-heading">
+                                    {each?.card?.card?.title}
+                                </span>
+                                {index === categoryShowId ? (
+                                    <span>⬆️ </span>
+                                ) : (
+                                    <span>⬇️</span>
+                                )}
+                            </div>
 
-                        {dataLists[eachKey]?.map((category) => (
-                            <FoodInfoCard
-                                key={category?.card?.info?.id}
-                                info={category?.card?.info || {}}
-                            />
-                        ))}
-                    </>
-                ))}
+                            {index === categoryShowId && (
+                                <div className="w-full bg-gray-100 mt-0 p-2">
+                                    {each?.card?.card?.itemCards.map(
+                                        (eachObj) => (
+                                            <FoodInfoCard
+                                                key={eachObj?.card?.info?.id}
+                                                info={eachObj?.card?.info}
+                                            />
+                                        )
+                                    )}
+                                </div>
+                            )}
+                        </>
+                    );
+                })}
             </ul>
         </div>
     );

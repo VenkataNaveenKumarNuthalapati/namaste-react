@@ -55,8 +55,8 @@
     overflow-y: scroll;
     width: 70%;
     padding: 10px 20px;
-    flex-wrap: wrap;
-    display: flex;
+    /* flex-wrap: wrap;
+    display: flex; */
 }
 .rec-image {
     height: 100px;
@@ -64,12 +64,10 @@
 }
 
 .rec-heading {
-    margin-top: 20px;
     display: block;
     width: 100%;
-    color: #ee872f;
-    text-align: center;
-    font-weight: bold;
+    color: black;
+    font-size: 20px;
 }
 
 .rec-card {
