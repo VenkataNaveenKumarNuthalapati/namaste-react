@@ -10,3 +10,13 @@
     font-weight: 300;
     font-style: normal;
 }
+
+/* Hide the scrollbar but keep the scrolling functionality */
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hidden {
+    -ms-overflow-style: none; /* For Internet Explorer */
+    scrollbar-width: none; /* For Firefox */
+}

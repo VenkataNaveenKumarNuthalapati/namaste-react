@@ -1,9 +1,23 @@
 import React from "react";
 import { BASE_IMAGE_URL } from "../../utils/utils";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../utils/cartSlice";
 
 const FoodInfoCard = ({ info }) => {
-    const { imageId, name, description, price, defaultPrice, ratings } = info;
+    console.log(info);
+    const { imageId, name, description, price, defaultPrice, ratings, id } =
+        info;
+    const foodObj = {
+        imageId,
+        name,
+        description,
+        price,
+        defaultPrice,
+        ratings,
+        id,
+    };
 
+    const dispatch = useDispatch();
     return (
         <div className="bg-white flex justify-between m-2 shadow-lg p-2 rounded-lg my-2 px-2">
             <div className="w-10/12">
@@ -34,7 +48,12 @@ const FoodInfoCard = ({ info }) => {
             </div>
 
             <div className="w-2/12 relative h-full flex-col my-auto">
-                <button className="p-1 px-4 cursor-pointer absolute bottom-2 right-2  bg-black text-white rounded-md px-2 z-10">
+                <button
+                    onClick={() => {
+                        dispatch(addItem(foodObj));
+                    }}
+                    className="p-1 px-4 cursor-pointer absolute bottom-2 right-2  bg-black text-white rounded-md px-2 z-10"
+                >
                     Add <sup>+</sup>
                 </button>
                 <img

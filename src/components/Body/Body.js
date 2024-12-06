@@ -28,20 +28,24 @@ const Body = () => {
             const data = await response.json();
             const restaurants =
                 data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-                    ?.restaurants || [];
+                    ?.restaurants;
+            // console.log(
+            //     restaurants,
+            //     data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+            //         ?.restaurants
+            // );
             setTitleOnMind(
                 data?.data?.cards[0]?.card?.card?.header?.title ||
-                    "Something went wrong in Title"
+                    "Not Delivering yourLocation Unserviceable - We don’t have any services here till now. Try changing location."
             );
             setTitleChainRest(
-                data?.data?.cards[1]?.card?.card?.header?.title ||
-                    "Something went wrong in Title"
+                data?.data?.cards[1]?.card?.card?.header?.title || undefined
             );
             setOnMindList(
                 data?.data?.cards[0]?.card?.card?.imageGridCards?.info || []
             );
-            setAllRestCards(restaurants);
-            setRestCards(restaurants);
+            setAllRestCards(restaurants || []);
+            setRestCards(restaurants || []);
         } catch (error) {
             console.error("Failed to fetch restaurant data:", error);
         }
@@ -81,13 +85,15 @@ const Body = () => {
             <h1 className="heading text-3xl">{titleOnMind}</h1>
             <OnMindDishes onMindDishList={onMindList} />
             <h1 className="heading text-3xl">{titleChainRest}</h1>
-            <SearchBar
-                userInput={userInput}
-                onSearchChange={setUserInput}
-                isTopRatedActive={isTopRatedActive}
-                onFilterClick={filterByRating}
-            />
-            {restCards.length === 0 ? (
+            {titleChainRest !== undefined && (
+                <SearchBar
+                    userInput={userInput}
+                    onSearchChange={setUserInput}
+                    isTopRatedActive={isTopRatedActive}
+                    onFilterClick={filterByRating}
+                />
+            )}
+            {titleChainRest !== undefined && restCards.length === 0 ? (
                 <ShimmerUI numberList={Array.from({ length: 12 })} />
             ) : (
                 <RestCards restList={filteredRestCards} />

@@ -25,7 +25,8 @@
 }
 .features-container li {
     margin: 0 5px;
-    width: 80px;
+    width: 83px;
+    text-align: center;
 }
 .features-container li:hover {
     font-weight: bold;
@@ -53,5 +54,5 @@ a {
 
 a.active {
     color: #ee872f;
-    font-weight: 400;
+    font-weight: 600;
 }
