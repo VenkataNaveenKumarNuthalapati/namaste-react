@@ -6,13 +6,13 @@ const CartSummary = ({ getPrice, stateGST, centralGST, cartItems }) => {
     const navigate = useNavigate();
 
     return (
-        <div className="h-[83vh] w-5/12 border shadow-lg rounded-md gap-3 mb-3 overflow-y-scroll scrollbar-hidden">
+        <div className="bg-white h-[83vh] w-5/12 border shadow-lg rounded-md gap-3 mb-3 overflow-y-scroll scrollbar-hidden">
             <div className="p-3 flex justify-between gap-3 border-b-2">
                 <h1 className="text-4xl font-bold text-right text-[#d7202e] p-0 mb-0">
                     Cart 🛒
                 </h1>
                 <button
-                    onClick={() => navigate(-1)}
+                    onClick={() => navigate("/")}
                     className="border-2 border-[#d7202e] font-bold text-lg p-2 px-4 text-[#d7202e] bg-white rounded-lg"
                 >
                     Add More Items
@@ -99,6 +99,7 @@ const CartSummary = ({ getPrice, stateGST, centralGST, cartItems }) => {
                 </div>
             ) : (
                 <img src={emptyCart} />
+                // <img src="https://www.shutterstock.com/shutterstock/photos/1500558905/display_1500/stock-photo-empty-food-cart-on-white-plate-grocery-shopping-concept-weekly-meal-planning-concept-bright-1500558905.jpg" />
             )}
         </div>
     );

@@ -24,17 +24,17 @@ const Restaurant = () => {
     };
 
     return (
-        <div className="rest-bg-container">
+        <div className="rest-bg-container h-[86vh]">
             <RestInfoCard restaurantData={restaurantData} />
 
-            <ul className="rec-cards-container">
+            <ul className="rec-cards-container  h-[83vh] scrollbar-hidden">
                 {dataLists.map((each, index) => {
                     return (
                         <>
                             <div
                                 onClick={() => onCategoryClickHandle(index)}
                                 key={index + each?.card?.card?.title}
-                                className="bg-gray-100 shadow-[#d7202e] shadow-sm w-full mt-2 p-2 flex align-middle justify-between cursor-pointer"
+                                className="bg-white shadow-[#d7202e] shadow-sm w-full mt-2 p-2 flex align-middle justify-between cursor-pointer"
                             >
                                 <span className="rec-heading text-lg">
                                     {each?.card?.card?.title}
@@ -47,7 +47,7 @@ const Restaurant = () => {
                             </div>
 
                             {index === categoryShowId && (
-                                <div className="w-full bg-gray-100 mt-0 p-2">
+                                <div className="w-full bg-white mt-0 p-2 border-2 shadow-[#d7202e] shadow-sm">
                                     {each?.card?.card?.itemCards.map(
                                         (eachObj) => (
                                             <FoodInfoCard

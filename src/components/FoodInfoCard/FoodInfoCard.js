@@ -4,8 +4,6 @@ import { useDispatch } from "react-redux";
 import { addItem, removeItem, updateQuantity } from "../../utils/cartSlice";
 
 const FoodInfoCard = ({ info, isInCart = false, itemQuantities }) => {
-    console.log(itemQuantities);
-
     const { imageId, name, description, price, defaultPrice, ratings, id } =
         info;
     const foodObj = {
@@ -20,7 +18,7 @@ const FoodInfoCard = ({ info, isInCart = false, itemQuantities }) => {
 
     const dispatch = useDispatch();
     return (
-        <div className="transition-all ease-out hover:-translate-x-0.5 hover:border-2 hover:border-black  hover:scale-105 duration-200 flex justify-between m-2 shadow-lg p-2 rounded-lg my-2 px-2">
+        <div className="bg-white transition-all ease-out hover:-translate-x-0.5 hover:border-2 hover:border-black  hover:scale-105 duration-200 flex justify-between m-2 shadow-lg p-2 rounded-lg my-2 px-2">
             <div className="w-10/12">
                 <p className="text-2xl text-[#d6535e]">{name}</p>
 
