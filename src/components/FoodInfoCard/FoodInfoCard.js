@@ -1,9 +1,11 @@
 import React from "react";
 import { BASE_IMAGE_URL } from "../../utils/utils";
 import { useDispatch } from "react-redux";
-import { addItem, removeItem } from "../../utils/cartSlice";
+import { addItem, removeItem, updateQuantity } from "../../utils/cartSlice";
 
-const FoodInfoCard = ({ info, isInCart = false }) => {
+const FoodInfoCard = ({ info, isInCart = false, itemQuantities }) => {
+    console.log(itemQuantities);
+
     const { imageId, name, description, price, defaultPrice, ratings, id } =
         info;
     const foodObj = {
@@ -48,14 +50,37 @@ const FoodInfoCard = ({ info, isInCart = false }) => {
 
             <div className="w-2/12 relative h-full flex-col my-auto">
                 {isInCart ? (
-                    <button
-                        onClick={() => {
-                            dispatch(removeItem(id));
-                        }}
-                        className="p-1 px-4 cursor-pointer absolute bottom-2 right-2  bg-red-500 border-2 text-white rounded-md px-2 z-10"
-                    >
-                        Remove
-                    </button>
+                    <div>
+                        <div className="text-center">
+                            <button
+                                className="px-2 mx-2 text-2xl"
+                                onClick={() =>
+                                    dispatch(updateQuantity({ id, ope: "-" }))
+                                }
+                            >
+                                -
+                            </button>
+                            <span className="text-2xl font-bold">
+                                {itemQuantities[id]}
+                            </span>
+                            <button
+                                className="px-2 text-2xl text-green-600"
+                                onClick={() =>
+                                    dispatch(updateQuantity({ id, ope: "+" }))
+                                }
+                            >
+                                +
+                            </button>
+                        </div>
+                        <button
+                            onClick={() => {
+                                dispatch(removeItem(id));
+                            }}
+                            className="p-1 px-4 cursor-pointer absolute bottom-2 right-2  bg-red-500 border-2 text-white rounded-md px-2 z-10"
+                        >
+                            Remove
+                        </button>
+                    </div>
                 ) : (
                     <button
                         onClick={() => {

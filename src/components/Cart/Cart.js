@@ -6,29 +6,32 @@ import "./Cart.css";
 
 const Cart = () => {
     // subscribing the store using selector
-    const cartItems = useSelector((store) => store.cart.items || []);
-
+    const { items, itemQuantities } = useSelector((store) => store.cart);
+    // console.log(itemQuantities);
     const getPrice = () => {
-        return cartItems.length !== 0
-            ? cartItems.reduce(
-                  (acc, current) => acc + current.price || current.defaultPrice,
+        return items.length !== 0
+            ? items.reduce(
+                  (acc, current) =>
+                      (acc + current.price || current.defaultPrice) *
+                      itemQuantities[current.id],
                   0
               ) / 100
             : 0;
     };
-    console.log(cartItems, getPrice());
+
     const stateGST = Math.round((getPrice() / 100) * 12 * 100) / 100 || 0;
     const centralGST = Math.round((getPrice() / 100) * 9 * 100) / 100 || 0;
     return (
         <div className="p-1 px-2">
             <div className="flex gap-1 justify-center">
-                {cartItems.length !== 0 && (
+                {items.length !== 0 && (
                     <ul className="transition-transform h-[83vh] p-3 w-7/12 border rounded-lg shadow-lg flex-col overflow-y-scroll scrollbar-hidden">
-                        {cartItems.map((info) => (
+                        {items.map((info) => (
                             <FoodInfoCard
                                 key={info.id}
                                 info={info}
                                 isInCart={true}
+                                itemQuantities={itemQuantities}
                             />
                         ))}
                     </ul>
@@ -37,7 +40,7 @@ const Cart = () => {
                     getPrice={getPrice}
                     stateGST={stateGST}
                     centralGST={centralGST}
-                    cartItems={cartItems}
+                    cartItems={items}
                 />
             </div>
         </div>
