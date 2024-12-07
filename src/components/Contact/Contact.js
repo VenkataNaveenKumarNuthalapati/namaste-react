@@ -8,7 +8,10 @@ const Contact = () => {
                 Have questions or feedback? We’d love to hear from you! Reach
                 out to us using the form below or through our contact details.
             </p>
-            <form className="ml-auto w-full max-w-md bg-white shadow-md rounded-lg p-6">
+            <form
+                className="ml-auto w-full max-w-md bg-white shadow-md rounded-lg p-6"
+                onSubmit={(e) => e.preventDefault()}
+            >
                 <div className="mb-4">
                     <label
                         htmlFor="name"
