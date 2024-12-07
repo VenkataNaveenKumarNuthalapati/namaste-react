@@ -2,13 +2,13 @@ import React from "react";
 
 const Contact = () => {
     return (
-        <div className="p-6 bg-gray-100 text-gray-800 min-h-screen flex flex-col items-center">
-            <h1 className="text-3xl font-bold text-red-600 mb-4">Contact Us</h1>
-            <p className="text-lg text-center mb-6">
+        <div className="bg-no-repeat bg-cover bg-[url('https://t3.ftcdn.net/jpg/05/89/92/50/360_F_589925063_ecQvtkwNAEnB7Nd9ad3hM7GOP0lae694.jpg')] p-6 bg-gray-100 text-gray-800 min-h-screen flex flex-col items-center">
+            <h1 className="text-3xl font-bold text-white mb-4">Contact Us</h1>
+            <p className="text-lg text-center mb-6 text-white">
                 Have questions or feedback? We’d love to hear from you! Reach
                 out to us using the form below or through our contact details.
             </p>
-            <form className="w-full max-w-md bg-white shadow-md rounded-lg p-6">
+            <form className="ml-auto w-full max-w-md bg-white shadow-md rounded-lg p-6">
                 <div className="mb-4">
                     <label
                         htmlFor="name"
