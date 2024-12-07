@@ -8,7 +8,7 @@ import Footer from "../Footer/Footer";
 const App = () => {
     return (
         <Provider store={appStore}>
-            <div className=" scrollbar-hidden">
+            <div className="scrollbar-hidden">
                 <Header />
                 <Outlet />
                 <Footer />

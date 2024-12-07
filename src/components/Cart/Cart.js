@@ -24,28 +24,26 @@ const Cart = () => {
     const stateGST = Math.round((getPrice() / 100) * 12 * 100) / 100 || 0;
     const centralGST = Math.round((getPrice() / 100) * 9 * 100) / 100 || 0;
     return (
-        <div className={`p-1 px-2`}>
-            <div className="flex gap-1 justify-center">
-                {items.length !== 0 && (
-                    <ul className="transition-transform h-[83vh] p-3 w-7/12 border rounded-lg shadow-lg flex-col overflow-y-scroll scrollbar-hidden">
-                        {items.map((info) => (
-                            <FoodInfoCard
-                                key={info.id}
-                                info={info}
-                                isInCart={true}
-                                itemQuantities={itemQuantities}
-                            />
-                        ))}
-                    </ul>
-                )}
-                <CartSummary
-                    getPrice={getPrice}
-                    stateGST={stateGST}
-                    centralGST={centralGST}
-                    cartItems={items}
-                    activeRestId={activeRestId}
-                />
-            </div>
+        <div className="lg:flex justify-center">
+            <CartSummary
+                getPrice={getPrice}
+                stateGST={stateGST}
+                centralGST={centralGST}
+                cartItems={items}
+                activeRestId={activeRestId}
+            />
+            {items.length !== 0 && (
+                <ul className="order-first transition-transform lg:h-[83vh] p-3 lg:w-7/12 border rounded-lg shadow-lg flex-col overflow-y-scroll scrollbar-hidden">
+                    {items.map((info) => (
+                        <FoodInfoCard
+                            key={info.id}
+                            info={info}
+                            isInCart={true}
+                            itemQuantities={itemQuantities}
+                        />
+                    ))}
+                </ul>
+            )}
         </div>
     );
 };

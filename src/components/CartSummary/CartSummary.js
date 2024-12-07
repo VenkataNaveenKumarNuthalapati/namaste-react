@@ -27,7 +27,7 @@ const CartSummary = ({
                     <div key={index} className="mt-2">
                         <input
                             type="text"
-                            className="w-10/12 p-2 border-2 border-gray-400 rounded-s-lg"
+                            className="w-[80%] p-2 border-2 border-gray-400 rounded-s-lg"
                             placeholder={`Enter a ${placeholder}`}
                         />
                         <button className="p-2 bg-gray-200 font-bold ml-2 text-black rounded-r-lg border-2 border-gray-400">
@@ -59,7 +59,7 @@ const CartSummary = ({
     );
 
     return (
-        <div className="bg-white h-[83vh] w-5/12 border shadow-lg rounded-md gap-3 mb-3 overflow-y-scroll scrollbar-hidden">
+        <div className="py-4 bg-white lg:h-[83vh] lg:w-[50%] border shadow-lg rounded-md gap-3 mb-3 overflow-y-scroll scrollbar-hidden">
             <div className="p-3 flex justify-between gap-3 border-b-2">
                 <h1 className="text-4xl font-bold text-right text-[#d7202e]">
                     Cart 🛒

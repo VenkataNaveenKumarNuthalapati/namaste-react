@@ -10,7 +10,10 @@ const BodyShimmer = () => {
             {/* Shimmer for On Mind Dishes */}
             <div className="shimmer-dish-container">
                 {Array.from({ length: 12 }).map((_, index) => (
-                    <div key={index} className="shimmer-dish-card"></div>
+                    <div
+                        key={index}
+                        className="w-[15%] h-[50px] md:h-[70px] lg:h-[90px] shimmer-dish-card"
+                    ></div>
                 ))}
             </div>
 

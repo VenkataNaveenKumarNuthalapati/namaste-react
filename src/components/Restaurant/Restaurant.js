@@ -17,7 +17,7 @@ const Restaurant = () => {
 
     if (!restaurantData) {
         return (
-            <div className="rest-bg-container h-[86vh]">
+            <div className="rest-bg-container h-[86vh] lg:flex">
                 <RestInfoCardShimmer />
                 <ListShimmer />
             </div>
@@ -33,9 +33,9 @@ const Restaurant = () => {
     };
 
     return (
-        <div className="rest-bg-container h-[86vh]">
+        <div className="p-2  mx-4 lg:flex justify-between">
             <RestInfoCard restaurantData={restaurantData} />
-            <ul className="rec-cards-container  h-[83vh] scrollbar-hidden">
+            <ul className="lg:h-[83vh] lg:w-[58%] overflow-scroll scrollbar-hidden">
                 {dataLists.map((each, index) => {
                     return (
                         <>

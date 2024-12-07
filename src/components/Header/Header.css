@@ -1,6 +1,6 @@
 .header-container {
-    position: sticky;
-    top: -10px;
+    /* position: sticky;
+    top: -10px; */
     background-color: #ffffff;
     display: flex;
     flex-direction: row;
@@ -12,7 +12,7 @@
     border-left: 10px solid #d7202e; */
     border-top-left-radius: 3px;
     margin: 0;
-    padding: 10px;
+    padding: 5px;
     box-sizing: border-box;
 }
 .features-container {
@@ -23,13 +23,13 @@
     list-style-type: none;
     padding: 10px;
 }
-.features-container li {
+.feature {
     margin: 0 5px;
-    width: 83px;
-    text-align: center;
+    /* width: 83px; */
+    /* text-align: right; */
 }
-.features-container li:hover {
-    font-weight: bold;
+.feature:hover {
+    font-weight: 500 !important;
     transition: all 0.3s ease;
     cursor: pointer;
 }

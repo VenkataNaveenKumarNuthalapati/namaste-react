@@ -3,7 +3,7 @@ import "./ListShimmer.css";
 
 const ListShimmer = ({ shimmerCount = 12 }) => {
     return (
-        <ul className="rec-cards-container shimmer-list">
+        <ul className="rec-cards-container shimmer-list w-full lg:w-[70%]">
             {Array.from({ length: shimmerCount }, (_, index) => (
                 <li
                     key={index}

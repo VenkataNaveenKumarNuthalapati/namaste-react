@@ -5,6 +5,7 @@ import higherOrderComp from "../../utils/higherOrderComp";
 import "./RestCards.css";
 
 const LabelRestCard = higherOrderComp(RestCard);
+
 const RestCards = ({ restList }) => {
     return (
         <ul className="cards-container">

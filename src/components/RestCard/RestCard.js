@@ -30,7 +30,7 @@ const RestCard = ({ restObj, class_name }) => {
         <div
             className={`${
                 restObj?.info?.isOpen ? "cursor-pointer" : "cursor-not-allowed"
-            } card-container h-[310px] pb-4 ${class_name}`}
+            } card-container w-[45%] md:w-[30%] lg:w-[22%] xl:w-[18%] min-h-[310px] pb-4 ${class_name}`}
             onClick={() =>
                 handleRestaurantClick(restObj?.info?.isOpen, id, navigate)
             }
