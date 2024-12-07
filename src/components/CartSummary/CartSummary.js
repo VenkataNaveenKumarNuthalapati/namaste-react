@@ -21,7 +21,7 @@ const CartSummary = ({
                     onClick={() =>
                         navigate(
                             `${
-                                cartItems.length === 0
+                                activeRestId === -1
                                     ? `/`
                                     : `/restaurant/${activeRestId}`
                             }`
