@@ -2,7 +2,13 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import emptyCart from "../../../public/images/emptyCart.png";
 
-const CartSummary = ({ getPrice, stateGST, centralGST, cartItems }) => {
+const CartSummary = ({
+    getPrice,
+    stateGST,
+    centralGST,
+    cartItems,
+    activeRestId,
+}) => {
     const navigate = useNavigate();
 
     return (
@@ -12,14 +18,24 @@ const CartSummary = ({ getPrice, stateGST, centralGST, cartItems }) => {
                     Cart 🛒
                 </h1>
                 <button
-                    onClick={() => navigate("/")}
+                    onClick={() =>
+                        navigate(
+                            `${
+                                cartItems.length === 0
+                                    ? `/`
+                                    : `/restaurant/${activeRestId}`
+                            }`
+                        )
+                    }
                     className="border-2 border-[#d7202e] font-bold text-lg p-2 px-4 text-[#d7202e] bg-white rounded-lg"
                 >
-                    Add More Items
+                    {cartItems.length === 0 ? "Add Items" : "Add More Items"}
                 </button>
             </div>
             <h1 className="mx-10 text-3xl text-[#d7202e] m-2 text-center">
-                Cart Summary
+                {cartItems.length === 0
+                    ? "Your Cart is empty add some items"
+                    : "Cart Summary"}
             </h1>
             {cartItems.length !== 0 && (
                 <h1 className="text-2xl text-center">

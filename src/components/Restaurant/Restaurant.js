@@ -5,11 +5,14 @@ import RestInfoCard from "../RestInfoCard/RestInfoCard";
 import FoodInfoCard from "../FoodInfoCard/FoodInfoCard";
 import "./Restaurant.css";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const Restaurant = () => {
     const { resId } = useParams();
     const [restaurantData, dataLists] = useRestApiData(resId);
     const [categoryShowId, setCategoryShowId] = useState(0);
+
+    const { itemQuantities } = useSelector((store) => store.cart);
 
     if (!restaurantData) {
         return <ShimmerUI numberList={[...Array(18)]} />;
@@ -53,6 +56,14 @@ const Restaurant = () => {
                                             <FoodInfoCard
                                                 key={eachObj?.card?.info?.id}
                                                 info={eachObj?.card?.info}
+                                                isInCart={
+                                                    itemQuantities[
+                                                        eachObj?.card?.info?.id
+                                                    ] === undefined
+                                                        ? false
+                                                        : true
+                                                }
+                                                itemQuantities={itemQuantities}
                                             />
                                         )
                                     )}

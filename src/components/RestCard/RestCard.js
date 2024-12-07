@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import { setRestId } from "../../utils/cartSlice";
+import { useDispatch, useSelector } from "react-redux/dist/react-redux";
 import "./RestCard.css";
 
 const RestCard = ({ restObj, class_name }) => {
@@ -16,16 +17,22 @@ const RestCard = ({ restObj, class_name }) => {
     } = restObj?.info;
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const handleRestaurantClick = (isOpen, id, navigate) => {
+        if (isOpen) {
+            navigate("/restaurant/" + id);
+            dispatch(setRestId(id));
+        }
+    };
 
     return (
         <div
             className={`${
                 restObj?.info?.isOpen ? "cursor-pointer" : "cursor-not-allowed"
             } card-container h-[310px] pb-4 ${class_name}`}
-            onClick={
-                restObj?.info?.isOpen
-                    ? () => navigate("/restaurant/" + id)
-                    : undefined
+            onClick={() =>
+                handleRestaurantClick(restObj?.info?.isOpen, id, navigate)
             }
         >
             <img
