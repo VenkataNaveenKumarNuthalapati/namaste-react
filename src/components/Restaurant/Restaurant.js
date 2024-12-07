@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom";
-import ShimmerUI from "../ShimmerUI/ShimmerUI";
 import { useRestApiData } from "../../utils/useRestApiData";
 import RestInfoCard from "../RestInfoCard/RestInfoCard";
 import FoodInfoCard from "../FoodInfoCard/FoodInfoCard";
-import "./Restaurant.css";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import RestInfoCardShimmer from "../RestInfoCardShimmer/RestInfoCardShimmer";
+import ListShimmer from "../ListShimmer/ListShimmer";
+import "./Restaurant.css";
 
 const Restaurant = () => {
     const { resId } = useParams();
@@ -15,7 +16,12 @@ const Restaurant = () => {
     const { itemQuantities } = useSelector((store) => store.cart);
 
     if (!restaurantData) {
-        return <ShimmerUI numberList={[...Array(18)]} />;
+        return (
+            <div className="rest-bg-container h-[86vh]">
+                <RestInfoCardShimmer />
+                <ListShimmer />
+            </div>
+        );
     }
 
     const onCategoryClickHandle = (index) => {
@@ -29,7 +35,6 @@ const Restaurant = () => {
     return (
         <div className="rest-bg-container h-[86vh]">
             <RestInfoCard restaurantData={restaurantData} />
-
             <ul className="rec-cards-container  h-[83vh] scrollbar-hidden">
                 {dataLists.map((each, index) => {
                     return (

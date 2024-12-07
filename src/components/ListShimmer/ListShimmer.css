@@ -1,0 +1,41 @@
+/* General shimmer animation */
+@keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+.shimmer-list {
+    padding: 0 1rem;
+    overflow: hidden;
+}
+
+.shimmer-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f6f6f6 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    margin-bottom: 10px;
+}
+
+.shimmer-line {
+    border-radius: 4px;
+    background: #e0e0e0;
+}
+
+.shimmer-title {
+    width: 70%;
+    height: 15px;
+}
+
+.shimmer-arrow {
+    width: 10%;
+    height: 15px;
+}

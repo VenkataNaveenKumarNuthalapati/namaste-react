@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useMemo } from "react";
-import RestCards from "../RestCards/RestCards";
 import ShimmerUI from "../ShimmerUI/ShimmerUI";
+import BodyShimmer from "../BodyShimmer/BodyShimmer";
+
 import OnMindDishes from "../OnMindDishes/OnMindDishes";
 import SearchBar from "../SearchBar/SearchBar";
+import RestCards from "../RestCards/RestCards";
 import { apiUrl } from "../../utils/utils";
-
 import globalContext from "../../utils/useGlobalContext";
 import "./Body.css";
 
@@ -17,6 +18,7 @@ const Body = () => {
     const [titleChainRest, setTitleChainRest] = useState("");
     const [onMindList, setOnMindList] = useState([]);
     const { isOnline } = globalContext();
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         fetchRestaurants();
@@ -29,11 +31,6 @@ const Body = () => {
             const restaurants =
                 data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
                     ?.restaurants;
-            // console.log(
-            //     restaurants,
-            //     data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-            //         ?.restaurants
-            // );
             setTitleOnMind(
                 data?.data?.cards[0]?.card?.card?.header?.title ||
                     "Not Delivering yourLocation Unserviceable - We don’t have any services here till now. Try changing location."
@@ -46,6 +43,7 @@ const Body = () => {
             );
             setAllRestCards(restaurants || []);
             setRestCards(restaurants || []);
+            setIsLoading(false);
         } catch (error) {
             console.error("Failed to fetch restaurant data:", error);
         }
@@ -72,6 +70,10 @@ const Body = () => {
         }
         setIsTopRatedActive(!isTopRatedActive);
     };
+
+    if (isLoading) {
+        return <BodyShimmer />;
+    }
 
     return (
         <div className="relative body-container">
