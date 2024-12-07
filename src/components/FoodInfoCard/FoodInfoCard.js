@@ -1,10 +1,9 @@
 import React from "react";
 import { BASE_IMAGE_URL } from "../../utils/utils";
 import { useDispatch } from "react-redux";
-import { addItem } from "../../utils/cartSlice";
+import { addItem, removeItem } from "../../utils/cartSlice";
 
-const FoodInfoCard = ({ info }) => {
-    console.log(info);
+const FoodInfoCard = ({ info, isInCart = false }) => {
     const { imageId, name, description, price, defaultPrice, ratings, id } =
         info;
     const foodObj = {
@@ -19,7 +18,7 @@ const FoodInfoCard = ({ info }) => {
 
     const dispatch = useDispatch();
     return (
-        <div className="bg-white flex justify-between m-2 shadow-lg p-2 rounded-lg my-2 px-2">
+        <div className="transition-all ease-out hover:-translate-x-0.5 hover:border-2 hover:border-black  hover:scale-105 duration-200 flex justify-between m-2 shadow-lg p-2 rounded-lg my-2 px-2">
             <div className="w-10/12">
                 <p className="text-2xl text-[#d6535e]">{name}</p>
 
@@ -48,14 +47,26 @@ const FoodInfoCard = ({ info }) => {
             </div>
 
             <div className="w-2/12 relative h-full flex-col my-auto">
-                <button
-                    onClick={() => {
-                        dispatch(addItem(foodObj));
-                    }}
-                    className="p-1 px-4 cursor-pointer absolute bottom-2 right-2  bg-black text-white rounded-md px-2 z-10"
-                >
-                    Add <sup>+</sup>
-                </button>
+                {isInCart ? (
+                    <button
+                        onClick={() => {
+                            dispatch(removeItem(id));
+                        }}
+                        className="p-1 px-4 cursor-pointer absolute bottom-2 right-2  bg-red-500 border-2 text-white rounded-md px-2 z-10"
+                    >
+                        Remove
+                    </button>
+                ) : (
+                    <button
+                        onClick={() => {
+                            dispatch(addItem(foodObj));
+                        }}
+                        className="p-1 px-4 cursor-pointer absolute bottom-2 right-2  bg-black text-white rounded-md px-2 z-10"
+                    >
+                        Add <sup>+</sup>
+                    </button>
+                )}
+
                 <img
                     className="rounded-lg h-28 w-full"
                     src={`${BASE_IMAGE_URL}w_300,h_300,c_fit/${

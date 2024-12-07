@@ -9,7 +9,7 @@ import { useState } from "react";
 const Restaurant = () => {
     const { resId } = useParams();
     const [restaurantData, dataLists] = useRestApiData(resId);
-    const [categoryShowId, setCategoryShowId] = useState(null);
+    const [categoryShowId, setCategoryShowId] = useState(0);
 
     if (!restaurantData) {
         return <ShimmerUI numberList={[...Array(18)]} />;
