@@ -3,7 +3,7 @@ import logo3 from "../../../public/images/logo3.png";
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-800 text-gray-200 py-6 lg:flex justify-between items-center p-4">
+        <footer className="bg-gray-800 text-gray-200 py-6 lg:flex justify-between items-center p-4 sticky bottom-[-80px]">
             <div className="flex justify-center items-end space-x-4">
                 <img
                     className="h-10 w-10 object-contain"
