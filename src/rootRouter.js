@@ -8,7 +8,7 @@ import ErrorCompo from "./components/ErrorCompo/ErrorCompo";
 import Restaurant from "./components/Restaurant/Restaurant";
 
 import { RouterProvider } from "react-router-dom";
-export const rootRouter = createBrowserRouter(
+const rootRouter = createBrowserRouter(
     [
         {
             path: "/",
