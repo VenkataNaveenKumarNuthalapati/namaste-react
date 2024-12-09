@@ -47,7 +47,7 @@ const Header = () => {
     );
 
     return (
-        <div className="sticky top-[-10px] z-20">
+        <div className="fixed w-full top-[-10px] z-20">
             <div className="header-container">
                 {/* Logo and Online Status */}
                 <div className="logo-container flex items-end border-black border-l-[#d7202e] border-b-2 border-l-8 p-2">
@@ -83,7 +83,7 @@ const Header = () => {
                 </button>
 
                 {/* Desktop Navigation */}
-                <ul className="hidden border-2 w-1/2 2xl:w-1/3 lg:flex lg:justify-around items-center list-none p-2.5">
+                <ul className="hidden border-2 w-1/2 2xl:w-1/2 lg:flex lg:justify-around items-center list-none p-2.5">
                     <span
                         className={
                             isOnline ? "text-green-400 text-lg" : "text-red-400"

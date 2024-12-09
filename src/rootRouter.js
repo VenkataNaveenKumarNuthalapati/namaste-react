@@ -7,6 +7,7 @@ import Contact from "./components/Contact/Contact";
 import ErrorCompo from "./components/ErrorCompo/ErrorCompo";
 import Restaurant from "./components/Restaurant/Restaurant";
 
+import { RouterProvider } from "react-router-dom";
 export const rootRouter = createBrowserRouter(
     [
         {
@@ -43,3 +44,15 @@ export const rootRouter = createBrowserRouter(
         },
     }
 );
+
+import React from "react";
+
+const RootRouter = () => {
+    return (
+        <div>
+            <RouterProvider router={rootRouter} />
+        </div>
+    );
+};
+
+export default RootRouter;

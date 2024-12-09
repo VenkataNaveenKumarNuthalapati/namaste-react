@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import FoodInfoCard from "../FoodInfoCard/FoodInfoCard";
 import CartSummary from "../CartSummary/CartSummary";
+
 import "./Cart.css";
 
 const Cart = () => {
