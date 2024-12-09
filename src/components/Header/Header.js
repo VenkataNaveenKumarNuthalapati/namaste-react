@@ -5,6 +5,9 @@ import logo3 from "../../../public/images/logo3.png";
 import { useSelector } from "react-redux";
 import "./Header.css";
 
+import redwifi from "../../../public/images/redwifi.png";
+import greenwifi from "../../../public/images/greenwifi.png";
+
 const Header = () => {
     const [isLogin, setIsLogin] = useState(false);
     const [isHamburger, setIsHamburger] = useState(false);
@@ -60,13 +63,20 @@ const Header = () => {
                         Foodie Haven
                     </p>
                 </div>
-                <span
-                    className={`${
-                        isOnline ? "text-green-400 text-lg" : "text-red-400"
-                    } lg:hidden`}
-                >
-                    {isOnline ? "Online 🟢" : "Offline 🔴"}
-                </span>
+
+                {isOnline ? (
+                    <img
+                        className="lg:hidden w-[37px] m-0 h-[30px]"
+                        src={greenwifi}
+                        alt="green"
+                    />
+                ) : (
+                    <img
+                        className="lg:hidden w-[37px] m-0 h-[32px]"
+                        src={redwifi}
+                        alt="red"
+                    />
+                )}
 
                 {/* Hamburger Menu Buttons */}
                 <button
@@ -84,13 +94,20 @@ const Header = () => {
 
                 {/* Desktop Navigation */}
                 <ul className="hidden border-2 w-1/2 2xl:w-1/2 lg:flex lg:justify-around items-center list-none p-2.5">
-                    <span
-                        className={
-                            isOnline ? "text-green-400 text-lg" : "text-red-400"
-                        }
-                    >
-                        {isOnline ? "Online 🟢" : "Offline 🔴"}
-                    </span>
+                    {isOnline ? (
+                        <img
+                            className="w-[37px] m-0 h-[30px]"
+                            src={greenwifi}
+                            alt="green"
+                        />
+                    ) : (
+                        <img
+                            className="w-[37px] m-0 h-[32px]"
+                            src={redwifi}
+                            alt="red"
+                        />
+                    )}
+
                     {renderNavLinks()}
                 </ul>
             </div>
