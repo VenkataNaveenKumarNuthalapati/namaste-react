@@ -10,7 +10,6 @@ const Cart = () => {
     const { items, itemQuantities, activeRestId } = useSelector(
         (store) => store.cart
     );
-    // console.log(itemQuantities);
     const getPrice = () => {
         return items.length !== 0
             ? items.reduce(

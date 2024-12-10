@@ -35,7 +35,6 @@ const Body = () => {
     } = state;
 
     useEffect(() => {
-        console.log("Use Effect Called");
         fetchRestaurants();
     }, []); // Using restCards and isLoading as dependencies
 
@@ -48,8 +47,7 @@ const Body = () => {
                     ?.restaurants;
 
             // Update all states at once
-            console.log(state);
-            console.log(restaurants);
+
             setState((prevState) => ({
                 ...prevState,
                 titleOnMind:
@@ -95,13 +93,10 @@ const Body = () => {
         });
     };
 
-    console.log(state);
-
     if (isLoading) {
         return <BodyShimmer />;
     }
 
-    console.log("JSX rendered");
     return (
         <div className="relative body-container h-min-[90vh] mt-14">
             {!isOnline && (
