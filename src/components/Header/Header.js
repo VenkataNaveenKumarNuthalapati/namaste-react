@@ -72,11 +72,7 @@ const Header = () => {
                         alt="green"
                     />
                 ) : (
-                    <img
-                        className="lg:hidden w-[37px] m-0 h-[32px]"
-                        src={Wifi2}
-                        alt="red"
-                    />
+                    <span className="lg:hidden text-4xl">Offline: 🔴</span>
                 )}
 
                 {/* Hamburger Menu Buttons */}
@@ -94,7 +90,7 @@ const Header = () => {
                 </button>
 
                 {/* Desktop Navigation */}
-                <ul className="hidden border-2 w-1/2 2xl:w-1/2 lg:flex lg:justify-around items-center list-none p-2.5">
+                <ul className="mt-2 hidden border-2 w-1/2 2xl:w-1/2 lg:flex lg:justify-around items-center list-none p-2.5">
                     {isOnline ? (
                         <img
                             className="w-[37px] m-0 h-[30px]"
@@ -102,11 +98,7 @@ const Header = () => {
                             alt="green"
                         />
                     ) : (
-                        <img
-                            className="w-[37px] m-0 h-[32px]"
-                            src={Wifi2}
-                            alt="red"
-                        />
+                        <span className="text-4xl">Offline: 🔴</span>
                     )}
 
                     {renderNavLinks()}
