@@ -5,7 +5,7 @@ import logo3 from "../../../public/images/logo3.png";
 import { useSelector } from "react-redux";
 import "./Header.css";
 
-import redWifi from "../../../public/images/redWifi.png";
+// import redWifi from "../../../public/images/redWifi.png";
 
 import greenWifi from "../../../public/images/greenWifi.png";
 
