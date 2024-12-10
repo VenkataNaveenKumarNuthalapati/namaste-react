@@ -25,7 +25,7 @@ const Cart = () => {
     const stateGST = Math.round((getPrice() / 100) * 12 * 100) / 100 || 0;
     const centralGST = Math.round((getPrice() / 100) * 9 * 100) / 100 || 0;
     return (
-        <div className="lg:flex justify-center">
+        <div className="lg:flex justify-center h-[89vh]">
             <CartSummary
                 getPrice={getPrice}
                 stateGST={stateGST}
@@ -34,7 +34,7 @@ const Cart = () => {
                 activeRestId={activeRestId}
             />
             {items.length !== 0 && (
-                <ul className="order-first transition-transform lg:h-[83vh] p-3 lg:w-7/12 border rounded-lg shadow-lg flex-col overflow-y-scroll scrollbar-hidden">
+                <ul className="order-first transition-transform lg:h-[88vh] p-3 lg:w-7/12 border rounded-lg shadow-lg flex-col overflow-y-scroll scrollbar-hidden">
                     {items.map((info) => (
                         <FoodInfoCard
                             key={info.id}

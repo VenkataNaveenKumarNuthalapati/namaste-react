@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
     return (
-        <div className=" p-6 bg-gray-100 text-gray-800 h-[84vh]">
+        <div className=" p-6 bg-gray-100 text-gray-800 h-[89vh]">
             <h1 className="text-3xl font-bold text-center mb-4 text-red-600">
                 Welcome to Foodie Haven
             </h1>
