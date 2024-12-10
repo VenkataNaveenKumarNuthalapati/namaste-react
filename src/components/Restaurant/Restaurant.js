@@ -20,14 +20,18 @@ const Restaurant = () => {
     const [categoryShowId, setCategoryShowId] = useState(0);
 
     useEffect(() => {
-        dispatch(fetchRestaurantDetails(resId));
-    }, [dispatch, resId]);
+        if (isLoading || !restaurantData) {
+            dispatch(fetchRestaurantDetails(resId));
+            dispatch(setRestId(resId));
+        }
+    }, []);
 
     const onCategoryClickHandle = (index) => {
         setCategoryShowId((prev) => (prev === index ? null : index));
     };
 
-    if (isLoading && !restaurantData) {
+    if (isLoading || !restaurantData) {
+        console.log(isLoading, !restaurantData, "shimmer");
         return (
             <div className="rest-bg-container h-[86vh] lg:flex">
                 <RestInfoCardShimmer />
@@ -35,8 +39,7 @@ const Restaurant = () => {
             </div>
         );
     }
-
-    dispatch(setRestId(resId));
+    console.log(isLoading, restaurantData, "render");
 
     return (
         <div className="p-2 mx-4 lg:flex justify-between">

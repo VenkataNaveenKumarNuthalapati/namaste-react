@@ -35,7 +35,7 @@ const restaurantSlice = createSlice({
     initialState: {
         restaurantData: null,
         dataLists: [],
-        isLoading: false,
+        isLoading: true,
         error: null,
     },
     reducers: {},
