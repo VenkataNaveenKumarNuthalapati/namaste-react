@@ -7,7 +7,7 @@ import "./Header.css";
 
 // import redWifi from "../../../public/images/redWifi.png";
 
-import greenWifi from "../../../public/images/greenWifi.png";
+import greenwifi from "../../../public/images/greenwifi.png";
 
 const Header = () => {
     const [isLogin, setIsLogin] = useState(false);
@@ -68,7 +68,7 @@ const Header = () => {
                 {isOnline ? (
                     <img
                         className="lg:hidden w-[37px] m-0 h-[30px]"
-                        src={greenWifi}
+                        src={greenwifi}
                         alt="green"
                     />
                 ) : (
@@ -94,7 +94,7 @@ const Header = () => {
                     {isOnline ? (
                         <img
                             className="w-[37px] m-0 h-[30px]"
-                            src={greenWifi}
+                            src={greenwifi}
                             alt="green"
                         />
                     ) : (
