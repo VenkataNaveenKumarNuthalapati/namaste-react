@@ -49,8 +49,9 @@ const Restaurant = () => {
                             onClick={() => onCategoryClickHandle(index)}
                             className="bg-white shadow-[#d7202e] shadow-sm w-full mt-2 p-2 flex align-middle justify-between cursor-pointer"
                         >
-                            <span className="rec-heading text-lg">
-                                {each?.card?.card?.title}
+                            <span className="rec-heading text-2xl">
+                                {each?.card?.card?.title} (
+                                {each?.card?.card?.itemCards.length} items)
                             </span>
                             {index === categoryShowId ? (
                                 <span>⬆️</span>

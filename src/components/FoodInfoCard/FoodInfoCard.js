@@ -40,7 +40,7 @@ const FoodInfoCard = ({ info, isInCart = false, itemQuantities, resId }) => {
     );
 
     return (
-        <div className="bg-white transition-all ease-out hover:scale-105 hover:border border-black z-20 duration-200 flex justify-between m-2 shadow-lg p-2 rounded-lg">
+        <div className="bg-white hover:border hover:bg-gray-100 border-black z-20 flex justify-between m-2 shadow-xl p-2 rounded-lg">
             <div className="w-10/12">
                 <p className="text-2xl text-[#d6535e]">{name}</p>
                 <p
