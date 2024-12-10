@@ -59,7 +59,7 @@ const CartSummary = ({
     );
 
     return (
-        <div className="py-4 bg-white lg:h-[88vh] lg:w-[60%] border shadow-lg rounded-md gap-3 mb-3 overflow-y-scroll scrollbar-hidden">
+        <div className="py-4 bg-white h-[88vh] lg:w-[60%] border shadow-lg rounded-md gap-3 mb-3 overflow-y-scroll scrollbar-hidden">
             <div className="p-3 flex justify-between gap-3 border-b-2">
                 <h1 className="text-4xl font-bold text-right text-[#d7202e]">
                     Cart 🛒
@@ -97,7 +97,7 @@ const CartSummary = ({
                 </>
             ) : (
                 <img
-                    className="m-auto w-8/12 lg:w-full"
+                    className="m-auto md:w-6/12 w-8/12 h-[70%] sm:h-[80%]"
                     src={emptyCart}
                     alt="Empty Cart"
                 />

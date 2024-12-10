@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { setRestId } from "../../utils/cartSlice";
-import { useDispatch, useSelector } from "react-redux/dist/react-redux";
+
 import "./RestCard.css";
 
 const RestCard = ({ restObj, class_name }) => {
@@ -17,12 +16,10 @@ const RestCard = ({ restObj, class_name }) => {
     } = restObj?.info;
 
     const navigate = useNavigate();
-    const dispatch = useDispatch();
 
     const handleRestaurantClick = (isOpen, id, navigate) => {
         if (isOpen) {
             navigate("/restaurant/" + id);
-            dispatch(setRestId(id));
         }
     };
 

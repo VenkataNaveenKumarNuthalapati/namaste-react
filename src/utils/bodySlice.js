@@ -53,7 +53,7 @@ const bodySlice = createSlice({
             state.userInput = ""; // Reset search input
             state.restCards = state.isTopRatedActive
                 ? state.allRestCards.filter(
-                      ({ info: { avgRating } }) => avgRating >= 4.3
+                      ({ info: { avgRating } }) => avgRating >= 4.5
                   )
                 : state.allRestCards;
         },

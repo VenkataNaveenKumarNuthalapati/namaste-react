@@ -42,7 +42,7 @@ const Header = () => {
                 </NavLink>
             </li>
             <button
-                className="login-button rounded-lg"
+                className="p-1.5 px-4 text-white bg-[#d21d29] rounded-lg"
                 onClick={() => setIsLogin(!isLogin)}
             >
                 {isLogin ? "Logout" : "Login"}

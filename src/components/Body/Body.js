@@ -43,7 +43,7 @@ const Body = () => {
     }
 
     return (
-        <div className="relative body-container h-min-[90vh] mt-14">
+        <div className="relative body-container h-min-[90vh] mt-14 px-4 py-2 h-min-[90vh] overflow-scroll">
             {!isOnline && (
                 <div className="absolute inset-0 bg-black bg-opacity-70 z-20 pointer-events-none">
                     <center className="text-2xl text-gray-200 mt-10">

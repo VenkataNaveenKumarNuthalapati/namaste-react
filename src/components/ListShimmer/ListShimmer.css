@@ -17,7 +17,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    /* height: 60px; */
     border-radius: 8px;
     background: linear-gradient(90deg, #e0e0e0 25%, #f6f6f6 50%, #e0e0e0 75%);
     background-size: 200% 100%;

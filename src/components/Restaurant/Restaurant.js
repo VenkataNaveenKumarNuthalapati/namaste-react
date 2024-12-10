@@ -6,13 +6,13 @@ import RestInfoCard from "../RestInfoCard/RestInfoCard";
 import FoodInfoCard from "../FoodInfoCard/FoodInfoCard";
 import RestInfoCardShimmer from "../RestInfoCardShimmer/RestInfoCardShimmer";
 import ListShimmer from "../ListShimmer/ListShimmer";
-import "./Restaurant.css";
 import { setRestId } from "../../utils/cartSlice";
+import "./Restaurant.css";
 
 const Restaurant = () => {
     const { resId } = useParams();
     const dispatch = useDispatch();
-    const { itemQuantities } = useSelector((store) => store.cart);
+    const { itemQuantities, activeRestId } = useSelector((store) => store.cart);
     const { restaurantData, dataLists, isLoading } = useSelector(
         (state) => state.restaurant
     );
@@ -20,7 +20,7 @@ const Restaurant = () => {
     const [categoryShowId, setCategoryShowId] = useState(0);
 
     useEffect(() => {
-        if (isLoading || !restaurantData) {
+        if (isLoading || !restaurantData || resId !== activeRestId) {
             dispatch(fetchRestaurantDetails(resId));
             dispatch(setRestId(resId));
         }
@@ -31,7 +31,6 @@ const Restaurant = () => {
     };
 
     if (isLoading || !restaurantData) {
-        console.log(isLoading, !restaurantData, "shimmer");
         return (
             <div className="rest-bg-container h-[86vh] lg:flex">
                 <RestInfoCardShimmer />
@@ -39,7 +38,6 @@ const Restaurant = () => {
             </div>
         );
     }
-    console.log(isLoading, restaurantData, "render");
 
     return (
         <div className="p-2 mx-4 lg:flex justify-between">
@@ -65,6 +63,7 @@ const Restaurant = () => {
                             <div className="w-full bg-white mt-0 p-2 border-2 shadow-[#d7202e] shadow-sm">
                                 {each?.card?.card?.itemCards.map((eachObj) => (
                                     <FoodInfoCard
+                                        resId={resId}
                                         key={eachObj?.card?.info?.id}
                                         info={eachObj?.card?.info}
                                         isInCart={

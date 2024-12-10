@@ -17,14 +17,14 @@ const RestInfoCard = ({ restaurantData }) => {
     const navigate = useNavigate();
 
     return (
-        <div className="rest-card w-full lg:w-[40%] lg:h-min-[82vh]">
+        <div className="rest-card w-full lg:w-[40%] lg:h-min-[82vh] mx-2 mt-2 rounded-lg shadow-lg">
             <img
-                className="rest-image md:w-[85%]"
+                className="rest-image w-full h-[35%]"
                 src={`${BASE_IMAGE_URL}w_660/${cloudinaryImageId}`}
                 alt={name}
             />
             <h1 className="font-bold text-[26px] text-center my-2">{name}</h1>
-            <div className="text-container">
+            <div className="text-container px-2">
                 <h3 className="area">
                     {areaName}, {locality}
                 </h3>

@@ -3,7 +3,7 @@ import "./RestInfoCardShimmer.css";
 
 const RestInfoCardShimmer = () => {
     return (
-        <div className="rest-card-shimmer shimmer-card m-2 h-[70vh] w-full lg:w-[47%]">
+        <div className="rest-card-shimmer m-2 h-min-[90vh] w-full lg:w-[47%]">
             {/* Shimmer Image */}
             <div className="shimmer-image"></div>
 

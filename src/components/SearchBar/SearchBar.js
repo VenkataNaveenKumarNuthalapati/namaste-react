@@ -11,7 +11,9 @@ const SearchBar = ({
         <div className="filter-container">
             <button
                 className={
-                    isTopRatedActive ? "rated-button" : "inactive-rated-button"
+                    isTopRatedActive
+                        ? "rated-button bg-[#d21d29] text-white px-4 py-2.5 mr-2 rounded-lg"
+                        : "rated-button bg-gray-300 text-black px-4 py-2 mr-2  rounded-lg"
                 }
                 onClick={onFilterClick}
             >
@@ -19,7 +21,7 @@ const SearchBar = ({
             </button>
             <input
                 type="search"
-                className="search-input border-2"
+                className="p-2 border border-gray-500 rounded-lg outline-none"
                 value={userInput}
                 placeholder="Search restaurants..."
                 onChange={(e) => onSearchChange(e.target.value)}

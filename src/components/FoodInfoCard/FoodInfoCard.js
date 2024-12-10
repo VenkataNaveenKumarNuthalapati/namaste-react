@@ -3,7 +3,7 @@ import { BASE_IMAGE_URL } from "../../utils/utils";
 import { useDispatch } from "react-redux";
 import { addItem, removeItem, updateQuantity } from "../../utils/cartSlice";
 
-const FoodInfoCard = ({ info, isInCart = false, itemQuantities }) => {
+const FoodInfoCard = ({ info, isInCart = false, itemQuantities, resId }) => {
     const { imageId, name, description, price, defaultPrice, ratings, id } =
         info;
 
@@ -40,7 +40,7 @@ const FoodInfoCard = ({ info, isInCart = false, itemQuantities }) => {
     );
 
     return (
-        <div className="bg-white transition-all ease-out hover:scale-105 duration-200 flex justify-between m-2 shadow-lg p-2 rounded-lg">
+        <div className="bg-white transition-all ease-out hover:scale-105 hover:border border-black z-20 duration-200 flex justify-between m-2 shadow-lg p-2 rounded-lg">
             <div className="w-10/12">
                 <p className="text-2xl text-[#d6535e]">{name}</p>
                 <p
@@ -69,7 +69,9 @@ const FoodInfoCard = ({ info, isInCart = false, itemQuantities }) => {
                     renderCartControls()
                 ) : (
                     <button
-                        onClick={() => dispatch(addItem(info))}
+                        onClick={() => {
+                            dispatch(addItem(info));
+                        }}
                         className="p-1 px-4 cursor-pointer absolute bottom-2 right-2 bg-black text-white rounded-md z-10"
                     >
                         Add <sup>+</sup>
