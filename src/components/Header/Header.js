@@ -5,9 +5,9 @@ import logo3 from "../../../public/images/logo3.png";
 import { useSelector } from "react-redux";
 import "./Header.css";
 
-import Wifi2 from "../../../public/images/redWifi.png";
+import redwifi from "../../../public/images/redWifi.png";
 
-import Wifi1 from "../../../public/images/greenWifi.png";
+import greenWifi from "../../../public/images/greenWifi.png";
 
 const Header = () => {
     const [isLogin, setIsLogin] = useState(false);
@@ -68,7 +68,7 @@ const Header = () => {
                 {isOnline ? (
                     <img
                         className="lg:hidden w-[37px] m-0 h-[30px]"
-                        src={Wifi1}
+                        src={greenWifi}
                         alt="green"
                     />
                 ) : (
@@ -94,7 +94,7 @@ const Header = () => {
                     {isOnline ? (
                         <img
                             className="w-[37px] m-0 h-[30px]"
-                            src={Wifi1}
+                            src={greenWifi}
                             alt="green"
                         />
                     ) : (
