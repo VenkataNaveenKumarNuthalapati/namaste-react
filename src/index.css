@@ -10,6 +10,9 @@
     font-weight: 300;
     font-style: normal;
 }
+html::-webkit-scrollbar {
+    display: none; /* Hides scrollbar for the page in Chrome, Safari, and Edge */
+}
 div::-webkit-scrollbar {
     display: none; /* Hides scrollbar in Chrome, Safari, and Edge */
 }
