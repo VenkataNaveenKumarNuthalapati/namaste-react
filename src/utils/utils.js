@@ -1,6 +1,6 @@
 export let apiUrl =
-    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=15.5057232&lng=80.049922&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
-// "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.4375084&lng=78.4482441&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+    // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=15.5057232&lng=80.049922&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.4375084&lng=78.4482441&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.0948008&lng=80.1656205&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
 if (navigator.geolocation) {
@@ -10,8 +10,6 @@ if (navigator.geolocation) {
             const lng = position.coords.longitude;
 
             apiUrl = `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${lat}&lng=${lng}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`;
-
-            console.log(apiUrl);
         },
         (error) => {
             console.error("Error fetching location:", error);
