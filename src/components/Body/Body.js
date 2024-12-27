@@ -63,7 +63,7 @@ const Body = () => {
                 />
             )}
             {titleChainRest !== undefined && restCards.length === 0 ? (
-                <ShimmerUI numberList={Array.from({ length: 12 })} />
+                <ShimmerUI numberList={Array.from({ length: 15 })} />
             ) : (
                 <RestCards restList={filteredRestCards} />
             )}
