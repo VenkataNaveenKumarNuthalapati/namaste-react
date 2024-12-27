@@ -10,7 +10,9 @@
     font-weight: 300;
     font-style: normal;
 }
-
+div::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in Chrome, Safari, and Edge */
+}
 /* Hide the scrollbar but keep the scrolling functionality */
 .scrollbar-hidden::-webkit-scrollbar {
     display: none;

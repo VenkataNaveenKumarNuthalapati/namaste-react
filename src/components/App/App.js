@@ -8,7 +8,7 @@ import "./App.css";
 const App = () => {
     return (
         <Provider store={appStore}>
-            <div className="scrollbar-hidden">
+            <div className="scrollbar-hidden h-screen">
                 <Header />
                 <Outlet />
                 <Footer />

@@ -59,7 +59,11 @@ const CartSummary = ({
     );
 
     return (
-        <div className="py-4 bg-white h-[88vh] lg:w-[60%] border shadow-lg rounded-md gap-3 mb-3 overflow-y-scroll scrollbar-hidden">
+        <div
+            className={`py-4 bg-white h-[88vh] lg:w-[40%] ${
+                cartItems.length === 0 && "lg:w-[60%]"
+            } border shadow-lg rounded-md gap-3 mb-3 overflow-y-scroll scrollbar-hidden`}
+        >
             <div className="p-3 flex justify-between gap-3 border-b-2">
                 <h1 className="text-4xl font-bold text-right text-[#d7202e]">
                     Cart 🛒
