@@ -16,9 +16,9 @@ const FoodInfoCard = ({ info, isInCart = false, itemQuantities, resId }) => {
     const getPrice = () => Math.round(price / 100) || defaultPrice / 100;
 
     const renderCartControls = () => (
-        <div className="text-center">
+        <div className="text-center shadow-md border border-gray-400 rounded-md w-[90px] ml-auto mb-2">
             <button
-                className="px-2 mx-2 text-2xl"
+                className="px-2 mx-2 text-2xl text-red-700"
                 onClick={() => handleUpdateQuantity("-")}
             >
                 -
@@ -40,7 +40,7 @@ const FoodInfoCard = ({ info, isInCart = false, itemQuantities, resId }) => {
     );
 
     return (
-        <div className="bg-white hover:border hover:bg-gray-100 border-black z-20 flex justify-between m-2 shadow-xl p-2 rounded-lg">
+        <div className="border border-gray-400 bg-gradient-to-t from-[#f6e2e3] hover:border-black scale-[98%] hover:scale-[101%] transition duration-300 ease-in-out flex justify-between m-2 p-2 rounded-md  hover:bg-white">
             <div className="w-10/12">
                 <p className="text-2xl text-[#d6535e]">{name}</p>
                 <p
@@ -64,7 +64,7 @@ const FoodInfoCard = ({ info, isInCart = false, itemQuantities, resId }) => {
                 </p>
             </div>
 
-            <div className="w-2/12 relative h-full flex-col my-auto">
+            <div className="w-2/12 relative h-full flex-col my-auto items-center">
                 {isInCart ? (
                     renderCartControls()
                 ) : (

@@ -17,7 +17,7 @@ const RestInfoCard = ({ restaurantData }) => {
     const navigate = useNavigate();
 
     return (
-        <div className="rest-card w-full lg:w-[40%] lg:h-min-[82vh] mx-2 mt-2 rounded-lg shadow-lg">
+        <div className="rest-card w-full lg:w-[35%] lg:h-min-[82vh] mx-2 mt-2 rounded-lg">
             <img
                 className="rest-image w-full h-[35%]"
                 src={`${BASE_IMAGE_URL}w_660/${cloudinaryImageId}`}

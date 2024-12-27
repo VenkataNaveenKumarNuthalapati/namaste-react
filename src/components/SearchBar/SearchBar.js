@@ -8,7 +8,7 @@ const SearchBar = ({
     onFilterClick,
 }) => {
     return (
-        <div className="filter-container">
+        <div className="filter-container px-4">
             <button
                 className={
                     isTopRatedActive

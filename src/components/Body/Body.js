@@ -43,7 +43,7 @@ const Body = () => {
     }
 
     return (
-        <div className="relative body-container h-min-[90vh] mt-14 px-4 py-2 h-min-[90vh] overflow-scroll">
+        <div className="relative body-container h-min-[90vh] mt-14 px- py-2 h-min-[90vh] overflow-scroll">
             {!isOnline && (
                 <div className="absolute inset-0 bg-black bg-opacity-70 z-20 pointer-events-none">
                     <center className="text-2xl text-gray-200 mt-10">
@@ -51,9 +51,9 @@ const Body = () => {
                     </center>
                 </div>
             )}
-            <h1 className="text-3xl mt-4">{titleOnMind}</h1>
+            <h1 className="text-3xl mt-4 px-4">{titleOnMind}</h1>
             <OnMindDishes onMindDishList={onMindList} />
-            <h1 className="heading text-3xl mb-4">{titleChainRest}</h1>
+            <h1 className="heading text-3xl px-4 mb-4">{titleChainRest}</h1>
             {titleChainRest !== undefined && (
                 <SearchBar
                     userInput={userInput}

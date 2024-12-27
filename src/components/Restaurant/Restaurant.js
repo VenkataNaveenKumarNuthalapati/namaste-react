@@ -40,16 +40,19 @@ const Restaurant = () => {
     }
 
     return (
-        <div className="p-2 mx-4 lg:flex justify-between">
+        <div className="p-2 lg:flex ">
             <RestInfoCard restaurantData={restaurantData} />
-            <ul className="lg:h-[83vh] lg:w-[58%] overflow-scroll scrollbar-hidden">
+            <ul className="lg:h-[83vh] lg:w-[65%] overflow-scroll scrollbar-hidden justify-between mt-2 rounded-lg px-2">
                 {dataLists.map((each, index) => (
-                    <div key={index}>
+                    <div
+                        key={index}
+                        className=" border-black border rounded-sm ml-1 mt-3 bg-white"
+                    >
                         <div
                             onClick={() => onCategoryClickHandle(index)}
-                            className="bg-white shadow-[#d7202e] shadow-sm w-full mt-2 p-2 flex align-middle justify-between cursor-pointer"
+                            className="bg-white w-full p-1 flex items-center justify-between cursor-pointer"
                         >
-                            <span className="rec-heading text-2xl">
+                            <span className="rec-heading text-2xl font-medium pl-2">
                                 {each?.card?.card?.title} (
                                 {each?.card?.card?.itemCards.length} items)
                             </span>
@@ -61,7 +64,7 @@ const Restaurant = () => {
                         </div>
 
                         {index === categoryShowId && (
-                            <div className="w-full bg-white mt-0 p-2 border-2 shadow-[#d7202e] shadow-sm">
+                            <div className="w-full">
                                 {each?.card?.card?.itemCards.map((eachObj) => (
                                     <FoodInfoCard
                                         resId={resId}

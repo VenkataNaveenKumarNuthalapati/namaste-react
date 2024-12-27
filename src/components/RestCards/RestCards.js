@@ -8,7 +8,7 @@ const LabelRestCard = higherOrderComp(RestCard);
 
 const RestCards = ({ restList }) => {
     return (
-        <ul className="cards-container">
+        <ul className="cards-container flex items-stretch">
             {restList.map((restObj) =>
                 restObj.isOpen ? (
                     <LabelRestCard
